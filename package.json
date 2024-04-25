@@ -16,6 +16,9 @@
     "gulp": "~3.3.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.24.4",
+    "@babel/preset-env": "^7.24.4",
+    "babel-register": "^6.26.0",
     "chai": "^5.1.0",
     "grunt": "^1.6.1",
     "grunt-mocha-test": "^0.13.3",

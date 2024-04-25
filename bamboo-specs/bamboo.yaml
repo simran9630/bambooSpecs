@@ -1,15 +1,14 @@
 version: 2
-plan:
-  project-key: TEST
-  key: DEV
-  name: devplan
-stages:
-- Default Stage:
-    manual: false
-    final: false
-    jobs:
-    - Node exec
-Node exec:
+deployment:
+  name: testdeploy
+  source-plan: devplan
+
+release-naming:
+  next-version-name: 0.6
+
+environments:
+  - QA
+QA:
   key: JOB1
   tasks:
   - any-task:
