@@ -1,15 +1,23 @@
+---
 version: 2
 deployment:
   name: testdeploy
   source-plan: TEST-TEST
-
 release-naming:
-  next-version-name: 0.6
-
+  next-version-name: release-7
+  applies-to-branches: false
+  auto-increment: true
+  auto-increment-variables: []
 environments:
-  - QA
-QA:
+- staging
+staging:
+  triggers: []
   tasks:
+  - clean
+  - artifact-download:
+      artifacts:
+      - {}
+      description: Download release contents
   - clean
   - artifact-download:
       artifacts:
@@ -28,3 +36,7 @@ QA:
         runtime: Node.js
         command: index.js
       description: check
+  final-tasks: []
+  variables: {}
+  requirements: []
+  notifications: []
