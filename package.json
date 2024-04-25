@@ -4,8 +4,23 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --require esm test.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.8",
+    "bower": "~1.3.12",
+    "express": "^4.19.2",
+    "grunt": "~0.4",
+    "grunt-cli": "~0.1",
+    "gulp": "~3.3.2"
+  },
+  "devDependencies": {
+    "chai": "^5.1.0",
+    "mocha": "^10.4.0",
+    "mocha-bamboo-reporter": "*",
+    "nodeunit": "~0.8"
+  },
+  "type": "module"
 }
