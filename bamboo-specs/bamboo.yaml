@@ -1,0 +1,28 @@
+version: 2
+plan:
+  project-key: DEMO
+  key: DEV
+  name: devplan
+stages:
+- Default Stage:
+    manual: false
+    final: false
+    jobs:
+    - Node exec
+Node exec:
+  key: JOB1
+  tasks:
+  - any-task:
+      plugin-key: com.atlassian.bamboo.plugins.bamboo-nodejs-plugin:task.builder.npm
+      configuration:
+        isolatedCache: 'false'
+        runtime: Node.js
+        command: install
+      description: Install
+  - any-task:
+      plugin-key: com.atlassian.bamboo.plugins.bamboo-nodejs-plugin:task.builder.node
+      configuration:
+        runtime: Node.js
+        command: index.js
+      description: check
+  artifact-subscriptions: []
