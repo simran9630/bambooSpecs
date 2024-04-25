@@ -1,7 +1,7 @@
 version: 2
 deployment:
   name: testdeploy
-  source-plan: devplan
+  source-plan: TEST-TEST
 
 release-naming:
   next-version-name: 0.6
@@ -9,8 +9,12 @@ release-naming:
 environments:
   - QA
 QA:
-  key: JOB1
   tasks:
+  - clean
+  - artifact-download:
+      artifacts:
+      - {}
+      description: Download release contents
   - any-task:
       plugin-key: com.atlassian.bamboo.plugins.bamboo-nodejs-plugin:task.builder.npm
       configuration:
@@ -24,4 +28,3 @@ QA:
         runtime: Node.js
         command: index.js
       description: check
-  artifact-subscriptions: []
