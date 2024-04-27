@@ -1,6 +1,7 @@
+---
 version: 2
 deployment:
-  name: testdeploy1
+  name: testdeploy
   source-plan: TEST-DEV
 release-naming:
   next-version-name: release-7
@@ -18,19 +19,8 @@ staging:
       artifacts:
       - {}
       description: Download release contents
-  - any-task:
-      plugin-key: com.atlassian.bamboo.plugins.bamboo-nodejs-plugin:task.builder.npm
-      configuration:
-        isolatedCache: 'false'
-        runtime: Node.js
-        command: install
-      description: Install
-  - any-task:
-      plugin-key: com.atlassian.bamboo.plugins.bamboo-nodejs-plugin:task.builder.node
-      configuration:
-        runtime: Node.js
-        command: index.js
-      description: check
+  - script:
+        - echo 'Hello world'
   final-tasks: []
   variables: {}
   requirements: []
