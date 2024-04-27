@@ -1,7 +1,7 @@
 version: 2
 deployment:
-  name: testdeploy
-  source-plan: TEST-TEST
+  name: testdeploy1
+  source-plan: TEST-DEV
 release-naming:
   next-version-name: release-7
   applies-to-branches: false
