@@ -1,4 +1,3 @@
----
 version: 2
 deployment:
   name: testdeploy
@@ -14,11 +13,7 @@ staging:
   triggers: []
   tasks:
   - clean
-  - artifact-download:
-      artifacts:
-      - {}
-      description: Download release contents
-  - clean
+ 
   - artifact-download:
       artifacts:
       - {}
