@@ -19,8 +19,19 @@ staging:
       artifacts:
       - {}
       description: Download release contents
-  - script:
-        - echo 'Hello world'
+  - any-task:
+      plugin-key: com.atlassian.bamboo.plugins.bamboo-nodejs-plugin:task.builder.npm
+      configuration:
+        isolatedCache: 'false'
+        runtime: Node.js
+        command: install
+      description: Install
+  - any-task:
+      plugin-key: com.atlassian.bamboo.plugins.bamboo-nodejs-plugin:task.builder.node
+      configuration:
+        runtime: Node.js
+        command: index.js
+      description: check
   final-tasks: []
   variables: {}
   requirements: []
